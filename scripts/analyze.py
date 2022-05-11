@@ -106,7 +106,7 @@ def main():
         sockParams += 'i=' + args.i + '||'
     if args.o:
         sockParams += 'o=' + args.o + '||'
-    if args.birdweather_id:
+        if args.birdweather_id:
         sockParams += 'birdweather_id=' + args.birdweather_id + '||'
     if args.include_list:
         sockParams += 'include_list=' + args.include_list + '||'
