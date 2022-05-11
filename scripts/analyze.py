@@ -12,7 +12,7 @@ python3 analyze.py --i 'example/XC563936 - Soundscape.mp3' \
 """
 
 import argparse
-import socket
+import    socket
 
 HEADER = 64
 PORT = 5050
