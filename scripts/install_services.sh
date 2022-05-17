@@ -116,7 +116,7 @@ create_necessary_dirs() {
 
   sudo -u ${USER} ln -fs $my_dir/exclude_species_list.txt $my_dir/scripts
   sudo -u ${USER} ln -fs $my_dir/include_species_list.txt $my_dir/scripts
-  sudo -u ${USER} ln -fs $my_dir/homepage/* ${EXTRACTED}  
+  sudo -u ${USER} ln -fs $my_dir/homepage/* ${EXTRACTED}
   sudo -u ${USER} ln -fs $my_dir/model/labels.txt ${my_dir}/scripts
   sudo -u ${USER} ln -fs $my_dir/scripts ${EXTRACTED}
   sudo -u ${USER} ln -fs $my_dir/scripts/play.php ${EXTRACTED}
@@ -336,8 +336,6 @@ EOF
 install_gotty_logs() {
   sudo -u ${USER} ln -sf $my_dir/templates/gotty \
     ${HOME}/.gotty
-  sudo -u ${USER} ln -sf $my_dir/templates/bashrc \
-    ${HOME}/.bashrc
   cat << EOF > $HOME/BirdNET-Pi/templates/birdnet_log.service
 [Unit]
 Description=BirdNET Analysis Log
@@ -386,7 +384,7 @@ install_phpsysinfo() {
 }
 
 config_icecast() {
-  if [ -f /etc/icecast2/icecast.xml ];then 
+  if [ -f /etc/icecast2/icecast.xml ];then
     cp /etc/icecast2/icecast.xml{,.prebirdnetpi}
   fi
   sed -i 's/>admin</>birdnet</g' /etc/icecast2/icecast.xml
@@ -451,7 +449,7 @@ install_services() {
   USER=$USER HOME=$HOME ${my_dir}/scripts/createdb.sh
 }
 
-if [ -f ${config_file} ];then 
+if [ -f ${config_file} ];then
   source ${config_file}
   install_services
 else
