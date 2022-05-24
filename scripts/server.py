@@ -487,7 +487,7 @@ def handle_client(conn, addr):
                                             soundscape_id = sdata['soundscape']['id']
                                             soundscape_uploaded = True
 
-                                        # POST detection to server
+                                        #POST detection to server
                                         detection_url = "https://app.birdweather.com/api/v1/stations/" + birdweather_id + "/detections"
                                         start_time = d.split(';')[0]
                                         end_time = d.split(';')[1]
